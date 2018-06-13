@@ -1,0 +1,17 @@
+pause at Windows
+    instead of running
+    D:\app\oracle\Middleware\BI_122130\user_projects\domains\DOMAIN\bitools\bin\start.cmd
+    set DOMAIN_HOME and run
+    D:\app\oracle\Middleware\BI_122130\bi\modules\oracle.bi.sysman\scripts\start.cmd
+    directly
+
+logfiles
+    watch the most important log files
+
+watch
+    run check periodically and break it with Ctrl-C
+
+upload repository
+
+     /u01/app/oracle/Middleware/BI_122130/user_projects/domains/DOMAIN/bitools/bin/datamodel.sh
+     ./datamodel.sh uploadrpd -I /u01/work/REPO_060618.rpd -U weblogic -P ******** -SI ssi
