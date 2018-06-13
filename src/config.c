@@ -34,7 +34,7 @@
 #define CL_HOME_4 "/u01/app/oracle/Client"
 #endif
 
-#define TEMP_DOMAIN "kvasybi"
+#define MW_DOMAIN "bidomain"
 
 
 /* internal buffer */
@@ -158,13 +158,13 @@ static char *guessMiddlewareDomain() {
         domain = strdup(tmp + strlen(base) + 1);
         free(tmp);
     } else {
-        /* check if 'kvasybi'-domain exists */
+        /* check if bi-domain exists */
         char *sub;
 
-        sub = (char *)malloc(strlen(base) + 1 + strlen(TEMP_DOMAIN) + 1);
-        sprintf(sub, "%s%c%s", base, DIRECTORY_SEPARATOR_CHAR, TEMP_DOMAIN);
+        sub = (char *)malloc(strlen(base) + 1 + strlen(MW_DOMAIN) + 1);
+        sprintf(sub, "%s%c%s", base, DIRECTORY_SEPARATOR_CHAR, MW_DOMAIN);
         if (directory_exists(sub)) {
-            domain = strdup(TEMP_DOMAIN);
+            domain = strdup(MW_DOMAIN);
             free(sub);
             goto quit;
         }
